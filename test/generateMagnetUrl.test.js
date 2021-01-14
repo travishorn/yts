@@ -2,10 +2,10 @@ const listMovies = require("../src/index").listMovies;
 const movieDetails = require("../src/index").movieDetails;
 const generateMagnetUrl = require("../src/utilities/generateMagnetUrl");
 
+const movie_id = 8462;
+
 test("generates a magnet URL", async () => {
   expect.assertions(1);
-
-  const movie_id = 8462.
 
   const movie = await movieDetails({ movie_id: movie_id });
   const torrent = movie.torrents.find((torrent) => torrent.quality === "720p");
@@ -32,4 +32,16 @@ test("integrates with listMovies", async () => {
   });
 
   expect(moviesWithMagnets.length).toBe(20);
+});
+
+test("integrates with movieDetails", async () => {
+  expect.assertions(1);
+
+  const movie = await movieDetails({ movie_id: movie_id });
+  
+  const torrentsWithMagnets = movie.torrents.filter((torrent) => {
+    return torrent.magnetUrl.slice(0, 7) === "magnet:";
+  });
+
+  expect(torrentsWithMagnets.length).toBeGreaterThan(0);
 });
