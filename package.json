@@ -1,6 +1,6 @@
 {
   "name": "yts",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Node.js promise-based library for interacting with the YTS YIFY movies API.",
   "main": "src/index.js",
   "scripts": {
