@@ -1,6 +1,8 @@
 /*
  * This list of trackers was updated 2021-01-14
  * It is the list found on all magnet URLs on https://yts.mx
+ * Note that this is a different list than what the API docs recommend,
+ * but using matching URLs to the actual site is probably better.
  */
 
 const trackers = [
