@@ -110,6 +110,16 @@ const main = async () => {
 
 There are other parameters to use with `listMovies()`. Full documentation can be found at https://yts.mx/api#list_movies
 
+## Tests
+
+Full tests are available for this library and the YTS API.
+
+```
+npm test
+```
+
+Note that this will invoke quite a few simultaneous HTTP requests to the YTS API.
+
 ## To Do
 
 - Add functions for suggestions, comments, reviews, and parental guides
