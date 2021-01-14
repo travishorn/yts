@@ -175,42 +175,6 @@ The result will look like this:
 }
 ```
 
-## Get movie comments
-
-The YTS API docs describe getting movie comments. However, as of 2021-01-14, all calls to the endpoint return a 404.
-
-```
-const main = async () => {
- const res = await yts.movieComments({ movie_id: 0000 });
-}
-```
-
-This function will always throw an error stating "The movie comments API is not working."
-
-## Get movie reviews
-
-The YTS API docs describe getting movie reviews. However, as of 2021-01-14, all calls to the endpoint return a 404.
-
-```
-const main = async () => {
- const res = await yts.movieReviews({ movie_id: 0000 });
-}
-```
-
-This function will always throw an error stating "The movie reviews API is not working."
-
-## Get movie parental guides
-
-The YTS API docs describe getting movie parental guides. However, as of 2021-01-14, all calls to the endpoint return an informational message stating 'Parental Guide for all the movies will be republished soon. Thank you for understanding!'.
-
-```
-const main = async () => {
- const res = await yts.movieParentalGuides({ movie_id: 0000 });
-}
-```
-
-This function will always throw an error stating "The movie parental guides API is not working."
-
 ## Tests
 
 Full tests are available for this library and the YTS API.
@@ -223,12 +187,10 @@ Note that this will invoke quite a few simultaneous HTTP requests to the YTS API
 
 ## To Do
 
-- Add function for upcoming movie list
-- Add functions for user details, key, profile
-- Add functions for registering user, editing settings, forgot/reset password
-- Add functions for liking movies, setting/getting/deleting bookmarks
-- Add functions for making, liking, reporting, and deleting comments
-- Add function for making movie requests
+- Comments, parental guides, reviews, upcoming movie list, and user details: These features are described in the YTS API documentation. However, they either return 404s or messages stating that they will be reublished soon.
+- Getting a user key (logging a user in), registering user, issuing forgot password email, resetting a password: These features require an application key which is only provided by contacting them
+- Getting a user profile: requires a user key which is only available by using the API to get a user key (see bullet point above)
+- Editing user settings, liking a movie, adding/getting/deleting bookmarks, making/liking/reporting/deleting comments, and making requests: These features require an application key and a user key
 
 ## License
 
