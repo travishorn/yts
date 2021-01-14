@@ -19,4 +19,12 @@ describe("gets movie details", () => {
     expect(res.medium_screenshot_image1).toBeDefined();
     expect(res.large_screenshot_image1).toBeDefined();
   });
+
+  test("with cast", async () => {
+    expect.assertions(1);
+
+    const res = await movieDetails({ movie_id: movie_id, with_cast: true });
+
+    expect(res.cast).toBeDefined();
+  });
 });
