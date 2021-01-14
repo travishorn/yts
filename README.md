@@ -175,6 +175,18 @@ The result will look like this:
 }
 ```
 
+## Get movie comments
+
+The YTS API docs describe getting movie comments. However, as of 2021-01-14, all calls to the endpoint return a 404.
+
+```
+const main = async () => {
+ const res = await yts.movieComments({ movie_id: 0000 });
+}
+```
+
+This function will always throw an error stating "The movie comments API is not working."
+
 ## Tests
 
 Full tests are available for this library and the YTS API.
@@ -187,7 +199,7 @@ Note that this will invoke quite a few simultaneous HTTP requests to the YTS API
 
 ## To Do
 
-- Add functions for suggestions, comments, reviews, and parental guides
+- Add functions for reviews, and parental guides
 - Add function for upcoming movie list
 - Add functions for user details, key, profile
 - Add functions for registering user, editing settings, forgot/reset password
