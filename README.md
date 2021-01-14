@@ -85,7 +85,8 @@ The result will look like this:
           "size": "1.00 MB",
           "size_bytes": 1000000,
           "date_uploaded": "2021-01-14 13:29:52",
-          "date_uploaded_unix": 1610627392
+          "date_uploaded_unix": 1610627392,
+          "magnet_url: "magnet:url for torrent"
         },{
           // Possibly more torrent files for various qualities
         }
@@ -109,6 +110,70 @@ const main = async () => {
 ```
 
 There are other parameters to use with `listMovies()`. Full documentation can be found at https://yts.mx/api#list_movies
+
+### Get movie details
+
+First get the movie's YTS ID. You might get this from `listMovies()`. Then call `movieDetails()`.
+
+```
+const main = async () => {
+ const res = await yts.movieDetails({ movie_id: 0000 });
+}
+```
+
+The result will look like this:
+
+```
+{
+  "movie": {
+    "id": 0000,
+    "url": "yts.mx URL",
+    "imdb_code": "tt0000000",
+    "title": "Movie Title",
+    "title_english": "Movie Title in English",
+    "title_long": "Movie Title (2021)",
+    "slug": "movie-title-2021",
+    "year": 2021,
+    "rating": 0,
+    "runtime": 0,
+    "genres": [
+      "Array of genre strings"
+    ],
+    "download_count": 0,
+    "like_count": 0,
+    "description_intro": "First part of description",
+    "description_full": "Full description of movie",
+    "yt_trailer_code": "YouTube video ID for trailer",
+    "language": "en",
+    "mpa_rating": "",
+    "background_image": "yts.mx JPG URL",
+    "background_image_original": "yts.mx JPG URL",
+    "small_cover_image": "yts.mx JPG URL",
+    "medium_cover_image": "yts.mx JPG URL",
+    "large_cover_image": "yts.mx JPG URL",
+    "torrents": [
+      {
+        "url": "yts.mx torrent URL",
+          "hash": "torrent hash",
+          "quality": "720p",
+          "type": "web",
+          "seeds": 0,
+          "peers": 0,
+          "size": "1.00 MB",
+          "size_bytes": 1000000,
+          "date_uploaded": "2021-01-14 13:29:52",
+          "date_uploaded_unix": 1610627392,
+          "magnet_url: "magnet:url for torrent"
+      },
+      {
+        // Possibly more torrent files for various qualities
+      },
+    ],
+    "date_uploaded": "2021-01-14 13:29:52",
+    "date_uploaded_unix": 1610627392
+  }
+}
+```
 
 ## Tests
 
