@@ -36,7 +36,7 @@ List the 20 most recently added movies.
 
 ```
 const main = async () => {
- const res = await yts.listMovies();
+  const res = await yts.listMovies();
 }
 ```
 
@@ -105,7 +105,7 @@ The result will look like this:
 
 ```
 const main = async () => {
- const res = await yts.listMovies({ limit: 10, query_term: "Avengers" });
+  const res = await yts.listMovies({ limit: 10, query_term: "Avengers" });
 }
 ```
 
@@ -117,7 +117,7 @@ First get the movie's YTS ID. You might get this from `listMovies()`. Then call 
 
 ```
 const main = async () => {
- const res = await yts.movieDetails({ movie_id: 0000 });
+  const res = await yts.movieDetails({ movie_id: 0000 });
 }
 ```
 
