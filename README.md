@@ -199,6 +199,18 @@ const main = async () => {
 
 This function will always throw an error stating "The movie reviews API is not working."
 
+## Get movie parental guides
+
+The YTS API docs describe getting movie parental guides. However, as of 2021-01-14, all calls to the endpoint return an informational message stating 'Parental Guide for all the movies will be republished soon. Thank you for understanding!'.
+
+```
+const main = async () => {
+ const res = await yts.movieParentalGuides({ movie_id: 0000 });
+}
+```
+
+This function will always throw an error stating "The movie parental guides API is not working."
+
 ## Tests
 
 Full tests are available for this library and the YTS API.
@@ -211,7 +223,6 @@ Note that this will invoke quite a few simultaneous HTTP requests to the YTS API
 
 ## To Do
 
-- Add function for parental guides
 - Add function for upcoming movie list
 - Add functions for user details, key, profile
 - Add functions for registering user, editing settings, forgot/reset password

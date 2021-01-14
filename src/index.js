@@ -2,6 +2,7 @@
 const lm = require("./listMovies");
 const mc = require("./movieComments");
 const md = require("./movieDetails");
+const mpg = require("./movieParentalGuides");
 const mr = require("./movieReviews");
 const ms = require("./movieSuggestions");
 
@@ -16,6 +17,7 @@ const baseUrl = "https://yts.mx/api/v2";
 const listMovies = async (params) => lm(baseUrl, params);
 const movieComments = async (params) => mc(baseUrl, params);
 const movieDetails = async (params) => md(baseUrl, params);
+const movieParentalGuides = async (params) => mpg(baseUrl, params);
 const movieReviews = async (params) => mr(baseUrl, params);
 const movieSuggestions = async (params) => ms(baseUrl, params);
 
@@ -24,6 +26,7 @@ module.exports = {
   listMovies,
   movieComments,
   movieDetails,
+  movieParentalGuides,
   movieReviews,
   movieSuggestions,
 };
