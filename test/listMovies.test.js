@@ -169,12 +169,14 @@ describe("lists movies", () => {
 
     /*
      * Note: The YTS API documentation describes sorting by download_count.
-     * However, returned data doesn't include download count so there's no way to test.
+     * However, returned data doesn't include download count.
+     * The only way to test would be making multiple secondary requests for movie details.
      */
 
     /*
      * Note: The YTS API documentation describes sorting by like_count.
-     * However, returned data doesn't include like count so there's no way to test.
+     * However, returned data doesn't include like count.
+     * The only way to test would be making multiple secondary requests for movie details.
      */
 
     test("by date added", async () => {

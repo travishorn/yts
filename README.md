@@ -112,7 +112,7 @@ There are other parameters to use with `listMovies()`. Full documentation can be
 
 ## To Do
 
-- Add functions for movie details, suggestions, comments, reviews, and parental guides
+- Add functions for suggestions, comments, reviews, and parental guides
 - Add function for upcoming movie list
 - Add functions for user details, key, profile
 - Add functions for registering user, editing settings, forgot/reset password
