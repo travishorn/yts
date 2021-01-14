@@ -17,7 +17,7 @@ module.exports = async (baseUrl, params) => {
     // Return the original torrent, plus the added magnet URL
     return {
       ...torrent,
-      magnetUrl: generateMagnetUrl(movie.title_long, torrent),
+      magnet_url: generateMagnetUrl(movie.title_long, torrent),
     };
   });
 

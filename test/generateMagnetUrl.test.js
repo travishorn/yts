@@ -26,7 +26,7 @@ test("integrates with listMovies", async () => {
   
   const moviesWithMagnets = res.movies.filter((movie) => {
     const torrentsWithMagnets = movie.torrents.filter((torrent) => {
-      return torrent.magnetUrl.slice(0, 7) === "magnet:";
+      return torrent.magnet_url.slice(0, 7) === "magnet:";
     });
 
     return torrentsWithMagnets.length > 0;
@@ -41,7 +41,7 @@ test("integrates with movieDetails", async () => {
   const movie = await movieDetails({ movie_id: movie_id });
   
   const torrentsWithMagnets = movie.torrents.filter((torrent) => {
-    return torrent.magnetUrl.slice(0, 7) === "magnet:";
+    return torrent.magnet_url.slice(0, 7) === "magnet:";
   });
 
   expect(torrentsWithMagnets.length).toBeGreaterThan(0);
@@ -54,7 +54,7 @@ test("integrates with movieSuggestions", async () => {
   
   const moviesWithMagnets = res.movies.filter((movie) => {
     const torrentsWithMagnets = movie.torrents.filter((torrent) => {
-      return torrent.magnetUrl.slice(0, 7) === "magnet:";
+      return torrent.magnet_url.slice(0, 7) === "magnet:";
     });
 
     return torrentsWithMagnets.length > 0;
