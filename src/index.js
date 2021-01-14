@@ -1,6 +1,7 @@
 // Functions are in separate files. Require them.
 const lm = require("./listMovies");
 const md = require("./movieDetails");
+const ms = require("./movieSuggestions");
 
 // The base URL for the YTS API. As of 2021-01-14 via https://yts.mx/api
 const baseUrl = "https://yts.mx/api/v2";
@@ -12,9 +13,11 @@ const baseUrl = "https://yts.mx/api/v2";
  */
 const listMovies = async (params) => lm(baseUrl, params);
 const movieDetails = async (params) => md(baseUrl, params);
+const movieSuggestions = async (params) => ms(baseUrl, params);
 
 // Export the composed functions so they can be called like yts.listMovies() etc.
 module.exports = {
   listMovies,
   movieDetails,
+  movieSuggestions,
 };

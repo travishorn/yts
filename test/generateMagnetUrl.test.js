@@ -1,6 +1,7 @@
+const generateMagnetUrl = require("../src/utilities/generateMagnetUrl");
 const listMovies = require("../src/index").listMovies;
 const movieDetails = require("../src/index").movieDetails;
-const generateMagnetUrl = require("../src/utilities/generateMagnetUrl");
+const movieSuggestions = require("../src/index").movieSuggestions;
 
 const movie_id = 8462;
 
@@ -44,4 +45,20 @@ test("integrates with movieDetails", async () => {
   });
 
   expect(torrentsWithMagnets.length).toBeGreaterThan(0);
+});
+
+test("integrates with movieSuggestions", async () => {
+  expect.assertions(1);
+
+  const res = await movieSuggestions({ movie_id: movie_id });
+  
+  const moviesWithMagnets = res.movies.filter((movie) => {
+    const torrentsWithMagnets = movie.torrents.filter((torrent) => {
+      return torrent.magnetUrl.slice(0, 7) === "magnet:";
+    });
+
+    return torrentsWithMagnets.length > 0;
+  });
+
+  expect(moviesWithMagnets.length).toBe(4);
 });
