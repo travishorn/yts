@@ -8,7 +8,7 @@ const axios = require("axios");
 const generateMagnetUrl = require("./utilities/generateMagnetUrl");
 
 module.exports = async (baseUrl, params) => {
-  // Request a list of movies via the YTS API with given endpoint parameters
+  // Request movie details for the movie id in params
   const res = await axios.get(`${baseUrl}/movie_details.json`, { params });
   const movie = res.data.data.movie;
 
