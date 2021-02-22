@@ -4,28 +4,16 @@ Node.js promise-based library for interacting with the YTS YIFY movies API.
 
 ## Installation
 
-The module is not published to npm, yet. In the meantime, you can clone the repository.
+Install via npm.
 
 ```
-git clone https://github.com/travishorn/yts.git
+npm i yts
 ```
 
-Change into the directory
+Require yts in your project.
 
 ```
-cd yts
-```
-
-Install the dependencies
-
-```
-npm install
-```
-
-Require it in your project.
-
-```
-const yts = require("./path/to/yts/src/index");
+const yts = require("yts");
 ```
 
 ## Usage
