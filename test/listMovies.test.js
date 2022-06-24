@@ -31,7 +31,7 @@ describe("lists movies", () => {
     expect.assertions(1);
 
     const res = await listMovies({ quality: "720p" });
-    
+
     const movies720p = res.movies.filter((movie) => {
       const torrents720p = movie.torrents.filter((torrent) => {
         return torrent.quality === "720p";
@@ -45,10 +45,10 @@ describe("lists movies", () => {
 
   test("with rating filter", async () => {
     expect.assertions(1);
-  
+
     const ratingMinimum = 8;
     const res = await listMovies({ minimum_rating: ratingMinimum });
-    
+
     const moviesRating = res.movies.filter((movie) => {
       return movie.rating >= ratingMinimum;
     });
@@ -69,7 +69,7 @@ describe("lists movies", () => {
       expect.assertions(1);
 
       const res = await listMovies({ query_term: "tt4154756" });
-      
+
       expect(res.movies[0].id).toBe(8462);
     });
 
@@ -96,10 +96,10 @@ describe("lists movies", () => {
 
   test("by genre", async () => {
     expect.assertions(1);
-  
+
     const genre = "action";
     const res = await listMovies({ genre: genre });
-      
+
     const moviesInGenre = res.movies.filter((movie) => {
       const matchingGenres = movie.genres.filter((g) => {
         return g.toLowerCase() === genre.toLowerCase();
@@ -114,10 +114,10 @@ describe("lists movies", () => {
   describe("sorted", () => {
     test("by title", async () => {
       expect.assertions(1);
-    
+
       const sortKey = "title";
       const res = await listMovies({ sort_by: sortKey });
-      
+
       const moviesSorted = res.movies.sort((a, b) => {
         if (a[sortKey] < b[sortKey]) return 1;
         if (a[sortKey] > b[sortKey]) return -1;
@@ -129,10 +129,10 @@ describe("lists movies", () => {
 
     test("by year", async () => {
       expect.assertions(1);
-    
+
       const sortKey = "year";
       const res = await listMovies({ sort_by: sortKey });
-      
+
       const moviesSorted = res.movies.sort((a, b) => {
         if (a[sortKey] < b[sortKey]) return 1;
         if (a[sortKey] > b[sortKey]) return -1;
@@ -144,10 +144,10 @@ describe("lists movies", () => {
 
     test("by rating", async () => {
       expect.assertions(1);
-    
+
       const sortKey = "rating";
       const res = await listMovies({ sort_by: sortKey });
-      
+
       const moviesSorted = res.movies.sort((a, b) => {
         if (a[sortKey] < b[sortKey]) return 1;
         if (a[sortKey] > b[sortKey]) return -1;
@@ -181,10 +181,10 @@ describe("lists movies", () => {
 
     test("by date added", async () => {
       expect.assertions(1);
-    
+
       const sortKey = "date_added";
       const res = await listMovies({ sort_by: sortKey });
-      
+
       const moviesSorted = res.movies.sort((a, b) => {
         if (a["date_uploaded_unix"] < b["date_uploaded_unix"]) return -1;
         if (a["date_uploaded_unix"] > b["date_uploaded_unix"]) return 1;
@@ -196,10 +196,10 @@ describe("lists movies", () => {
 
     test("by date added ascending", async () => {
       expect.assertions(1);
-    
+
       const sortKey = "date_added";
       const res = await listMovies({ sort_by: sortKey, order_by: "asc" });
-      
+
       const moviesSorted = res.movies.sort((a, b) => {
         if (a["date_uploaded_unix"] < b["date_uploaded_unix"]) return 1;
         if (a["date_uploaded_unix"] > b["date_uploaded_unix"]) return -1;

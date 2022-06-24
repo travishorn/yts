@@ -97,11 +97,13 @@ const main = async () => {
 }
 ```
 
-There are other parameters to use with `listMovies()`. Full documentation can be found at https://yts.mx/api#list_movies
+There are other parameters to use with `listMovies()`. Full documentation can be
+found at https://yts.mx/api#list_movies
 
 ### Get movie details
 
-First get the movie's YTS ID. You might get this from `listMovies()`. Then call `movieDetails()`.
+First get the movie's YTS ID. You might get this from `listMovies()`. Then call
+`movieDetails()`.
 
 ```
 const main = async () => {
@@ -175,19 +177,37 @@ Note that this will invoke quite a few simultaneous HTTP requests to the YTS API
 
 ## To Do
 
-- Comments, parental guides, reviews, upcoming movie list, and user details: These features are described in the YTS API documentation. However, they either return 404s or messages stating that they will be reublished soon.
-- Getting a user key (logging a user in), registering user, issuing forgot password email, resetting a password: These features require an application key which is only provided by contacting them
-- Getting a user profile: requires a user key which is only available by using the API to get a user key (see bullet point above)
-- Editing user settings, liking a movie, adding/getting/deleting bookmarks, making/liking/reporting/deleting comments, and making requests: These features require an application key and a user key
+- Comments, parental guides, reviews, upcoming movie list, and user details:
+  These features are described in the YTS API documentation. However, they
+  either return 404s or messages stating that they will be reublished soon.
+- Getting a user key (logging a user in), registering user, issuing forgot
+  password email, resetting a password: These features require an application
+  key which is only provided by contacting them
+- Getting a user profile: requires a user key which is only available by using
+  the API to get a user key (see bullet point above)
+- Editing user settings, liking a movie, adding/getting/deleting bookmarks,
+  making/liking/reporting/deleting comments, and making requests: These features
+  require an application key and a user key
 
 ## License
 
 The MIT License
 
-Copyright 2021 Travis Horn
+Copyright 2022 Travis Horn
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
